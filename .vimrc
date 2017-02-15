@@ -35,6 +35,7 @@ Plugin 'wting/rust.vim'             " Rust
 Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
 Plugin 'PProvost/vim-ps1'           " Powershell
+Plugin 'derekwyatt/vim-scala'       " Scala
 
 " colors (graveyard)
 " Plugin 'jonathanfilip/vim-lucius'
