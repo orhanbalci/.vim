@@ -17,7 +17,7 @@ Plugin 'scrooloose/nerdtree'            " File tree
 Plugin 'jistr/vim-nerdtree-tabs'        " Better extension NerdTree
 Plugin 'Xuyuanp/nerdtree-git-plugin'    " Git symbols inside NerdTree
 Plugin 'airblade/vim-gitgutter'         " Git symbols in the gutter
-Plugin 'vim-ctrlspace/vim-ctrlspace'    " Workspace Manager
+" Plugin 'vim-ctrlspace/vim-ctrlspace'    " Workspace Manager
 Plugin 'Raimondi/delimitMate'           " Automatic delimeter insertion
 Plugin 'ervandew/supertab'              " Tab completion!
 Plugin 'itchyny/lightline.vim'          " Nicer status line
