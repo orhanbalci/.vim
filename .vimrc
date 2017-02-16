@@ -21,7 +21,8 @@ Plugin 'airblade/vim-gitgutter'         " Git symbols in the gutter
 Plugin 'Raimondi/delimitMate'           " Automatic delimeter insertion
 Plugin 'ervandew/supertab'              " Tab completion!
 "Plugin 'itchyny/lightline.vim'          " Nicer status line
-Plugin 'vim-airline/vim-airline'          " Better status line
+Plugin 'vim-airline/vim-airline'        " Better status line
+Plugin 'vim-airline/vim-airline-themes' " Status line themes
 Plugin '907th/vim-auto-save'            " Automatically saves files after edits
 Plugin 'rking/ag.vim'                   " Integration for the ag file searcher
 Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
@@ -220,5 +221,8 @@ let g:tagbar_type_rust = {
     \]
 \}
 
-" Csharp sript syntax
-au BufRead,BufNewFile *.csx setfiletype cs
+" Enable list of buffers for airline status line
+let g:airline#extensions#tabline#enabled = 1
+
+" Just show file name
+let g:airline#extensions#tabline#fnamemod = ':t'
