@@ -20,7 +20,8 @@ Plugin 'airblade/vim-gitgutter'         " Git symbols in the gutter
 " Plugin 'vim-ctrlspace/vim-ctrlspace'    " Workspace Manager
 Plugin 'Raimondi/delimitMate'           " Automatic delimeter insertion
 Plugin 'ervandew/supertab'              " Tab completion!
-Plugin 'itchyny/lightline.vim'          " Nicer status line
+"Plugin 'itchyny/lightline.vim'          " Nicer status line
+Plugin 'vim-airline/vim-airline'          " Better status line
 Plugin '907th/vim-auto-save'            " Automatically saves files after edits
 Plugin 'rking/ag.vim'                   " Integration for the ag file searcher
 Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
