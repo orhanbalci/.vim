@@ -226,3 +226,5 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Just show file name
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
