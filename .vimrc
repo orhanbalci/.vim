@@ -204,7 +204,7 @@ let g:CtrlSpaceSearchTiming = 10
 
 " Tags
 set tags+=rusty-tags.vi;/,~/workspace/rust/rust/rusty-tags.vi
-autocmd BufWrite *.rs :silent !rusty-tags vi
+" autocmd BufWrite *.rs :silent !rusty-tags vi
 map <silent> <S-TAB> :TagbarToggle<CR>
 let g:tagbar_map_help='<F1>'
 let g:tagbar_type_rust = {
