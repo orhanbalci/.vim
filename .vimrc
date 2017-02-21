@@ -29,7 +29,8 @@ Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
 Plugin 'tpope/vim-unimpaired'           " Better quickfix mappings
 Plugin 'majutsushi/tagbar'              " Ctags browser
 Plugin 'myusuf3/numbers.vim'            " Line numbers
-Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'             " Easily change surrounding quotes, parans etx
+Plugin 'tpope/vim-commentary'           " Easy comment code
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
