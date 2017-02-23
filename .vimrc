@@ -31,6 +31,8 @@ Plugin 'majutsushi/tagbar'              " Ctags browser
 Plugin 'myusuf3/numbers.vim'            " Line numbers
 Plugin 'tpope/vim-surround'             " Easily change surrounding quotes, parans etx
 Plugin 'tpope/vim-commentary'           " Easy comment code
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
@@ -230,3 +232,4 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
+let g:UltiSnipsExpandTrigger = "<tab>"
