@@ -57,6 +57,7 @@ Plugin 'chriskempson/base16-vim'
 " Plugin 'jeetsukumaran/vim-nefertiti'
 " Plugin 'junegunn/seoul256.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'wikitopian/hardmode'
 
 filetype plugin indent on
 
@@ -73,7 +74,7 @@ set ttimeout
 set ttimeoutlen=0
 
 " Misc preferences
-nnoremap ; :
+" nnoremap ; :
 nnoremap Y y$
 set nu
 autocmd BufRead,BufNewFile * setlocal nospell
@@ -132,6 +133,7 @@ colo gruvbox
 syntax enable
 set t_Co=256
 autocmd BufRead,BufNewFile * nested colorscheme gruvbox
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 set fillchars=
 
@@ -232,4 +234,5 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 let g:UltiSnipsExpandTrigger = "<tab>"
