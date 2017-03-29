@@ -37,7 +37,7 @@ Plugin 'honza/vim-snippets'
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
 Plugin 'cespare/vim-toml'           " Toml
-Plugin 'wting/rust.vim'             " Rust
+Plugin 'rust-lang/rust.vim'         " Rust
 Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
 Plugin 'PProvost/vim-ps1'           " Powershell
