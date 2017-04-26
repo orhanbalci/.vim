@@ -57,7 +57,6 @@ Plugin 'chriskempson/base16-vim'
 " Plugin 'jeetsukumaran/vim-nefertiti'
 " Plugin 'junegunn/seoul256.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'wikitopian/hardmode'
 
 filetype plugin indent on
 
