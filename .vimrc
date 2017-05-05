@@ -58,6 +58,13 @@ Plugin 'chriskempson/base16-vim'
 " Plugin 'junegunn/seoul256.vim'
 Plugin 'morhetz/gruvbox'
 
+if filereadable(expand("~/.vimrc_background"))
+   let base16colorspace=256
+     source ~/.vimrc_background
+else
+     colorscheme gruvbox
+endif
+
 filetype plugin indent on
 
 " Misc editor features
@@ -128,10 +135,8 @@ let g:gruvbox_contrast_light = "soft"
 let g:lightline = { 'colorscheme': 'wombat', }
 
 set background=dark
-colo gruvbox
 syntax enable
 set t_Co=256
-autocmd BufRead,BufNewFile * nested colorscheme gruvbox
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 set fillchars=
