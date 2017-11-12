@@ -12,7 +12,7 @@ Plugin 'vim-scripts/Align'              " Auto align text
 Plugin 'tpope/vim-fugitive'             " Git commands
 Plugin 'gmarik/vundle'                  " Package Manager
 Plugin 'scrooloose/syntastic'           " Syntax checker
-Plugin 'kien/ctrlp.vim'                 " Fuzzy file search
+Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy file search
 Plugin 'scrooloose/nerdtree'            " File tree
 Plugin 'jistr/vim-nerdtree-tabs'        " Better extension NerdTree
 Plugin 'Xuyuanp/nerdtree-git-plugin'    " Git symbols inside NerdTree
@@ -42,6 +42,14 @@ Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
 Plugin 'PProvost/vim-ps1'           " Powershell
 Plugin 'derekwyatt/vim-scala'       " Scala
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'racer-rust/vim-racer'
+
+" Rust language server integration
+" Plugin 'prabirshrestha/async.vim'
+" Plugin 'prabirshrestha/vim-lsp'
+" Plugin 'prabirshrestha/asyncomplete.vim'
+" Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
 " colors (graveyard)
 " Plugin 'jonathanfilip/vim-lucius'
@@ -57,6 +65,25 @@ Plugin 'chriskempson/base16-vim'
 " Plugin 'jeetsukumaran/vim-nefertiti'
 " Plugin 'junegunn/seoul256.vim'
 Plugin 'morhetz/gruvbox'
+
+
+" Language server configuration
+" if executable('rls')
+"     au User lsp_setup call lsp#register_server({
+"                 \ 'name' : 'rls',
+"                 \ 'cmd' : {server_info->['rustup','run', 'nightly', 'rls']},
+"                 \ 'whitelist' : ['rust'],
+"                 \})
+" endif
+
+set hidden
+let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 if filereadable(expand("~/.vimrc_background"))
    let base16colorspace=256
@@ -203,8 +230,7 @@ set autoread
 " so this is still pretty realtime
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
-let g:gitgutter_sign_column_always = 1
-
+set signcolumn=yes
 " CtrlSpace
 set showtabline=0
 if executable("ag")
