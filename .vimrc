@@ -11,7 +11,7 @@ Plugin 'tpope/vim-sensible'             " Good default vim settings
 Plugin 'vim-scripts/Align'              " Auto align text
 Plugin 'tpope/vim-fugitive'             " Git commands
 Plugin 'gmarik/vundle'                  " Package Manager
-Plugin 'scrooloose/syntastic'           " Syntax checker
+"Plugin 'scrooloose/syntastic'           " Syntax checker
 Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy file search
 Plugin 'scrooloose/nerdtree'            " File tree
 Plugin 'jistr/vim-nerdtree-tabs'        " Better extension NerdTree
@@ -19,7 +19,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'    " Git symbols inside NerdTree
 Plugin 'airblade/vim-gitgutter'         " Git symbols in the gutter
 " Plugin 'vim-ctrlspace/vim-ctrlspace'    " Workspace Manager
 Plugin 'Raimondi/delimitMate'           " Automatic delimeter insertion
-Plugin 'ervandew/supertab'              " Tab completion!
+" Plugin 'ervandew/supertab'              " Tab completion!
 "Plugin 'itchyny/lightline.vim'          " Nicer status line
 Plugin 'vim-airline/vim-airline'        " Better status line
 Plugin 'vim-airline/vim-airline-themes' " Status line themes
@@ -31,19 +31,20 @@ Plugin 'majutsushi/tagbar'              " Ctags browser
 Plugin 'myusuf3/numbers.vim'            " Line numbers
 Plugin 'tpope/vim-surround'             " Easily change surrounding quotes, parans etx
 Plugin 'tpope/vim-commentary'           " Easy comment code
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
 
+Plugin 'neoclide/coc.nvim'
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
 Plugin 'cespare/vim-toml'           " Toml
 Plugin 'rust-lang/rust.vim'         " Rust
 Plugin 'othree/html5.vim'           " Html 5
-Plugin 'leafgarland/typescript-vim' " Typescript
-Plugin 'PProvost/vim-ps1'           " Powershell
+"Plugin 'leafgarland/typescript-vim' " Typescript
+"Plugin 'PProvost/vim-ps1'           " Powershell
 Plugin 'derekwyatt/vim-scala'       " Scala
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'racer-rust/vim-racer'
+"Plugin 'racer-rust/vim-racer'
 
 " Rust language server integration
 " Plugin 'prabirshrestha/async.vim'
@@ -67,23 +68,14 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
 
 
-" Language server configuration
-" if executable('rls')
-"     au User lsp_setup call lsp#register_server({
-"                 \ 'name' : 'rls',
-"                 \ 'cmd' : {server_info->['rustup','run', 'nightly', 'rls']},
-"                 \ 'whitelist' : ['rust'],
-"                 \})
-" endif
-
 set hidden
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
+" let g:racer_cmd = "~/.cargo/bin/racer"
+" let g:racer_experimental_completer = 1
 
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
+" au FileType rust nmap gd <Plug>(rust-def)
+" au FileType rust nmap gs <Plug>(rust-def-split)
+" au FileType rust nmap gx <Plug>(rust-def-vertical)
+" au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 if filereadable(expand("~/.vimrc_background"))
    let base16colorspace=256
@@ -139,7 +131,7 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
-filetype plugin indent on
+" filetype plugin indent on
 
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
@@ -181,17 +173,14 @@ let g:loaded_matchparen=1
 let g:limelight_conceal_ctermfg = 'gray'
 
 " Autocomplete
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-set completeopt=longest,menuone,preview
-noremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" set completeopt=longest,menuone,preview
+" noremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-" don't make .swp or .swo files
-set nobackup
+" inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -215,8 +204,8 @@ if has("win32") || has("win16")
 endif
 
 " Syntastic
-let g:syntastic_disabled_filetypes=['typescript']
-let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_disabled_filetypes=['typescript']
+" let g:syntastic_always_populate_loc_list = 1
 
 " Disable backups and swapfiles
 set nobackup
@@ -265,4 +254,84 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+
